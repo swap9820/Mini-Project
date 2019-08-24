@@ -41,36 +41,14 @@
   </div>
   </nav>
 </header>
+
 <body>
-    
-  <!-- <! Image slider/carousel >  
-  <div id="slides" class="carousel slide" data-ride="carousel">
-      <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class="active"></li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-      </ul>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/photo.jpg" >
-        </div>
-        <div class="carousel-item">
-          <img src="img/ws.jpg" >
-        </div>
-        <div class="carousel-item">
-          <img src="img/kids.jpg" >
-        </div>
-      </div>
-     
+ <span class="border ">
+  <form  class="container form-horizontal" action="/action_page.php">
+  <div class="form-group ">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter name">
     </div>
-    
-</body>
-</html>-->
-<form class="form-horizontal" action="/action_page.php">
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="name">Name:</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter name">
-      </div>
       
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Email:</label>
@@ -94,31 +72,35 @@
 	    <option>NGOs</option>
 	    <option>Competitions</option>
 	    <option>Others</option>
-    </select>
-  </div>
+     </select>
+     </div>
 
- <div class="form-group">
+     <div class="form-group">
         <label class="control-label col-sm-2" for="desc">Description:</label>
-          <input type="text" class="form-control" id="desc" placeholder="Enter Event Description">
+        
+          <!-- <input type="text" class="form-control" id="desc" placeholder="Enter Event Description"> -->
+          <textarea class="form-control" rows="3"></textarea>
+        </textarea>
       </div>
 </form>
 
-<form class="form-inline" action="/action_page.php"> 
-  <div class="form-group ">
-    <label for="date">Date :</label>
+
+<form class="container form-inline" action="/action_page.php"> 
+  <div class="form-group col-sm-4 ">
+    <label for="date">Date :  </label>
     <input type="date" class="form-control" id="date">
   </div>
-  <div class="form-group ">
-    <label  for="time">Time :</label>
+  <div class="form-group col-sm-4 ">
+    <label  for="time">Time :  </label>
     <input type="time" class="form-control" id="time">
   </div>
-  <div class="form-group">
-    <label for="duration">Duration :</label>
+  <div class="form-group col-sm-4">
+    <label for="duration">Duration :  </label>
     <input type="time" class="form-control" id="duration">
   </div>
 </form>
 
-<form class="form-horizontal" action="/action_page.php">
+<form class="container form-horizontal" action="/action_page.php">
 
       <div class="form-group">
         <label class="control-label col-sm-2" for="venue">Venue:</label>
@@ -141,3 +123,5 @@
       </div>
     </div>
     </form>
+    </span>
+</body>
