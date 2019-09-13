@@ -19,6 +19,19 @@
   
   
         }
+        .list
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.login
+{
+ float:right;
+}
+
       </style>
 </head>
 <header>
@@ -39,12 +52,138 @@
       <li class="nav-item">
         <a class="nav-link" href="organise.html">Organise</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Login</a>
-      </li>
+      <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong">
+          <a class="nav-link" >Login</a>
+        </li>
+      <li class="nav-item " data-toggle="modal" data-target="#exampleModalLong1">
+          <a class="nav-link"  >Sign Up</a>
+        </li>
       
      </ul>
    </div>
   </div>
   </nav>
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Login page</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" >
+                  <form id="basic-form" action="/examples/actions/confirmation.php" class="needs-validation" method="post" novalidate>
+                      <div class="form-group">
+                          <label for="inputEmail"><b>Email</b></label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
+                      </div>
+                      <div class="form-group">
+                          <label for="psw3"><b>Password</b></label>
+                          <input type="password" class="form-control" id="psw1" placeholder="Password" required>
+                          <div class="invalid-feedback">Please enter your password to continue.</div>
+                      </div>
+                      <div class="form-group">
+                          <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <button type="submit" class="btn btn-primary align-content-md-between">Login</button>
+                      
+              </div>
+             
+            </div>
+          </div>
+        
+      </div>
+      </div>
+    </form>
+      <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Sign Up Page</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" id="id01">
+                      <form id="basic-form" action="/examples/actions/confirmation.php" class="needs-validation" method="post" novalidate>
+                          <div class="form-group">
+                              <label for="inputEmail"><b>Email</b></label>
+                              <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                              <div class="invalid-feedback">Please enter a valid email address.</div>
+                          </div>
+                          <div class="form-group">
+                              <label for="psw1"><b>Password</b></label>
+                              <input type="password" class="form-control" id="psw1" placeholder="Password" required>
+                              <div class="invalid-feedback">Please enter your password to continue.</div>
+                          </div>
+                          <div class="form-group">
+                                  <label for="psw2"><b>Re-Enter Password</b></label>
+                                  <input type="password" class="form-control" id="psw2" placeholder="Re-Enter Password" required>
+                                  <div class="invalid-feedback">Please re-enter your password to continue.</div>
+                              </div>
+                          <div class="form-group">
+                              <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                              <button type="submit" onclick="checkPass()" class="btn btn-primary align-content-md-between">Signup</button> 
+                          </div>
+                </div>
+              </div>
+          </div>
+          </div>
+  
 </header>
+<body>
+    <script>
+        (function() {
+                     'use strict';
+                     window.addEventListener('load', function() {
+                         // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                         var forms = document.getElementsByClassName('needs-validation');
+                         // Loop over them and prevent submission
+                         var validation = Array.prototype.filter.call(forms, function(form) {
+                             form.addEventListener('submit', function(event) {
+                                 if (form.checkValidity() === false) {
+                                     event.preventDefault();
+                                     event.stopPropagation();
+                                 }
+                                 form.classList.add('was-validated');
+                             }, false);
+                         });
+                     }, false);
+                 })();
+                 
+               function checkPass()
+     {
+         //Store the password field objects into variables ...
+         var pass1 = document.getElementById('psw1');
+         var pass2 = document.getElementById('psw2');
+         //Store the Confimation Message Object ...
+         
+         //Compare the values in the password field 
+         //and the confirmation field
+          if(pass1.value != pass2.value) {
+         psw2.setCustomValidity("Passwords Don't Match");
+       } else {
+         psw2.setCustomValidity('');
+       }
+     }
+     
+     psw1.onchange = checkPass;
+     psw2.onkeyup = checkPass;
+     var modal = document.getElementById('id01');
+     
+     // When the user clicks anywhere outside of the modal, close it
+     window.onclick = function(event) {
+       if (event.target == modal) {
+         modal.style.display = "none";
+       }
+     }   
+     
+      </script>
+</body>
