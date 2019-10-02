@@ -42,38 +42,6 @@
     
 </head>
 <!-- NAVBAR -->
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-      <span class="navbar-toggler-icon bg-dark "></span>
-      <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarResponsive">
-     <ul class="navbar-nav ml-auto">
-      <li>
-         <a class="nav-link active " href="index.php">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="event.html">Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="organise.html">Organise</a>
-      </li>
-      <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong">
-          <a class="nav-link" >Login</a>
-        </li>
-      <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
-          <a class="nav-link"  >Sign Up</a>
-        </li>
-      
-     </ul>
-   </div>
-  </div>
-  </nav>
 
   <!-- LOGIN FORMS -->
 
@@ -109,11 +77,11 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"  onclick="clearFields()" data-dismiss="modal">Cancel</button>
                         <button type="submit" name="login-submit" class="btn btn-primary align-content-md-between">Login</button>
-                    </div>
-                  </form>
+                    
+                  
                   <!-- logout form -->
                   <form id="basic-form" action="includes/logout.inc.php" class="needs-validation" method="post" novalidate>
-                  <div class="modal-footer">
+                  
                         <button type="submit" name="logout-submit" class="btn btn-primary align-content-md-between">Logout</button>
                     </div>
                    </form>
@@ -169,3 +137,124 @@
  
 </header>
 
+ 
+ <script>
+ (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener('submit', function(event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+            
+             // SELECTING ALL TEXT ELEMENTS
+var username = document.forms['vform']['username'];
+var email = document.forms['vform']['email'];
+var password = document.forms['vform']['password'];
+var password_confirm = document.forms['vform']['password_confirm'];
+// SELECTING ALL ERROR DISPLAY ELEMENTS
+var name_error = document.getElementById('name_error');
+var email_error = document.getElementById('email_error');
+var password_error = document.getElementById('password_error');
+// SETTING ALL EVENT LISTENERS
+username.addEventListener('blur', nameVerify, true);
+email.addEventListener('blur', emailVerify, true);
+password.addEventListener('blur', passwordVerify, true);
+// validation function
+function Validate() {
+  // validate username
+  if (username.value == "") {
+    username.style.border = "1px solid red";
+    document.getElementById('username_div').style.color = "red";
+    name_error.textContent = "Username is required";
+    username.focus();
+    return false;
+  }
+  // validate username
+  if (username.value.length < 3) {
+    username.style.border = "1px solid red";
+    document.getElementById('username_div').style.color = "red";
+    name_error.textContent = "Username must be at least 3 characters";
+    username.focus();
+    return false;
+  }
+  // validate email
+  if (email.value == "") {
+    email.style.border = "1px solid red";
+    document.getElementById('email_div').style.color = "red";
+    email_error.textContent = "Email is required";
+    email.focus();
+    return false;
+  }
+  // validate password
+  if (password.value == "") {
+    password.style.border = "1px solid red";
+    document.getElementById('password_div').style.color = "red";
+    password_confirm.style.border = "1px solid red";
+    password_error.textContent = "Password is required";
+    password.focus();
+    return false;
+  }
+  // check if the two passwords match
+  if (password.value != password_confirm.value) {
+    password.style.border = "1px solid red";
+    document.getElementById('pass_confirm_div').style.color = "red";
+    password_confirm.style.border = "1px solid red";
+    password_error.innerHTML = "The two passwords do not match";
+    return false;
+  }
+}
+// event handler functions
+function nameVerify() {
+  if (username.value != "") {
+   username.style.border = "1px solid #5e6e66";
+   document.getElementById('username_div').style.color = "#5e6e66";
+   name_error.innerHTML = "";
+   return true;
+  }
+}
+function emailVerify() {
+  if (email.value != "") {
+  	email.style.border = "1px solid #5e6e66";
+  	document.getElementById('email_div').style.color = "#5e6e66";
+  	email_error.innerHTML = "";
+  	return true;
+  }
+}
+function passwordVerify() {
+  if (password.value != "") {
+  	password.style.border = "1px solid #5e6e66";
+  	document.getElementById('pass_confirm_div').style.color = "#5e6e66";
+  	document.getElementById('password_div').style.color = "#5e6e66";
+  	password_error.innerHTML = "";
+  	return true;
+  }
+  if (password.value === password_confirm.value) {
+  	password.style.border = "1px solid #5e6e66";
+  	document.getElementById('pass_confirm_div').style.color = "#5e6e66";
+  	password_error.innerHTML = "";
+  	return true;
+  }
+}
+
+function clearFields() {
+
+  document.getElementById('inputUserName').value = '';
+  document.getElementById('inputEmail').value = '';
+}
+   
+  </script>
+
+  
+
+</body>
