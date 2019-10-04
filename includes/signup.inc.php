@@ -36,7 +36,7 @@ require 'dbh.inc.php';
 
    }
    else if($password !== $passwordrepeat ){
-      header("Location: ../index.php?error=passwordcheckuid=".$username."&mail=".$email);
+      header("Location: ../index.php?error=passwordcheck&uid=".$username."&mail=".$email);
       exit();
 
    }
@@ -93,7 +93,7 @@ require 'dbh.inc.php';
 
 }
 else{
-   header("Location: ../header.php");
+   header("Location: ../index.php");
    exit();
 
 }
