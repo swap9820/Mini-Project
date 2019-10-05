@@ -1,7 +1,3 @@
-<?php
-include 'header.php';
-
-?>
 
 <main>
 <header>
@@ -38,28 +34,28 @@ include 'header.php';
   </nav>
 
   <span class="border ">
-  <form  class="container form-horizontal" action="/action_page.php">
+  <form  class="container form-horizontal" action="includes/organiser.inc.php" method="post">
   <div class="form-row">
   <div class="form-group col-sm-6 ">
       <label class="control-label col-sm-4" for="name">Name:</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
     </div>
       
     <div class="form-group col-sm-6">
       <label class="control-label col-sm-4" for="email">Email:</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email">  
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">  
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group col-sm-6">
       <label class="control-label col-sm-4" for="en">Event Name:</label>
-          <input type="text" class="form-control" id="en" placeholder="Enter Event Name">
+          <input type="text" class="form-control" id="en" name="event" placeholder="Enter Event Name">
     </div>
 
 	 <div class="form-group col-sm-6">
     <label class="control-label col-sm-4" for="Category">Category:</label>  
-    <select class="form-control" id="Category">
+    <select class="form-control" id="Category"  name="category" >
       <option value="" selected disabled>Please select category</option>
       <option>Workshops</option>
       <option>Classes</option>
@@ -77,49 +73,52 @@ include 'header.php';
         <label class="control-label col-sm-2" for="desc">Description:</label>
         
           <!-- <input type="text" class="form-control" id="desc" placeholder="Enter Event Description"> -->
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" name="desc"></textarea>
         </textarea>
       </div>
-</form>
 
 
-<form class="container form-inline" action="/action_page.php"> 
-  <!-- <div class="form-row"> -->
-  <div class="form-group col-sm-4 ">
-    <label  for="date">Date :</label>
-    <input type="date" class="form-control" id="date">
+
+<!-- <form class="container form-inline" action="includes/organiser.inc.php" method="post">--> 
+ 
+  
+  <div class="form-group  ">
+    <label class="control-label col-sm-4"  for="date">Date :</label>
+    <input type="date" class="form-control" name="date" id="date">
   </div>
-  <div class="form-group col-sm-4 ">
-    <label  for="time">Time :  </label>
-    <input type="time" class="form-control" id="time">
+  <div class="form-row"> 
+  <div class="form-group col-sm-6">
+    <label class="control-label col-sm-4"  for="time">From :  </label>
+    <input type="time" class="form-control" name="from" id="time">
   </div>
-  <div class="form-group col-sm-4">
-    <label for="duration">Duration :  </label>
-    <input type="time" class="form-control" id="duration">
+  <div class="form-group col-sm-6">
+    <label class="control-label col-sm-4"  for="duration">To :  </label>
+    <input type="time" class="form-control" name="to" id="duration">
+    </div>
     </div>
   <!-- </div> -->
-</form>
+
 <span class="container">
-<form class="container form-horizontal" action="/action_page.php">
+<!-- <form class="container form-horizontal" action="includes/organiser.inc.php" method="post">-->
 
       <div class="form-group">
         <label class="control-label col-sm-2" for="venue">Venue:</label>
-          <input type="text" class="form-control" id="venue" placeholder="Enter Venue">
+          <input type="text" class="form-control" name="venue" id="venue" placeholder="Enter Venue">
       </div>
 
       <div class="form-group">
           <label class="control-label col-sm-2" for="price">Ticket price:</label>
-            <input type="number" class="form-control" id="price" placeholder="Enter Ticket's Price">
+            <input type="number" class="form-control" name="price" id="price" placeholder="Enter Ticket's Price">
         </div>
   
         <div class="form-group">
             <label class="control-label col-sm-2" for="img">Cover image:</label>
-              <input type="url" class="form-control" id="img" placeholder="Attach url of image you want to display">
+              <input type="url" class="form-control" name="image" id="img" placeholder="Attach url of image you want to display">
           </div>    
     
     <div class="form-group"> 
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-dark border-dark">Submit</button>
+        <button type="submit" name="insertdata" class="btn btn-dark border-dark">Submit</button>
       </div>
     </div>
     </form>
