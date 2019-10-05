@@ -18,6 +18,33 @@ if(isset($_POST['insertdata']))
   $price= $_POST['price'];
   $image= $_POST['image'];
 
+  if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price) || empty($image))
+    {
+        header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
+        exit();
+
+    }
+
+   else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
+      header("Location: ../index.php?error=invalidemail&name");
+    exit();
+
+
+   }
+     
+  else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+  { 
+    header("Location: ../index.php?error=invalidemail&name=".$name);
+    exit();
+  }
+
+   elseif(!preg_match("/^[a-zA-Z0-9]*$/", $name ))
+   { 
+      header("Location: ../index.php?error=invaliduid&mail=".$email);
+      exit();
+
+   }
+else{
   $query = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
   $query_run = mysqli_query($connection,$query);
 
@@ -29,5 +56,6 @@ if(isset($_POST['insertdata']))
   else{
     echo '<script> alert("Data Not Saved");</script>';
   }
+}
 }
 ?>

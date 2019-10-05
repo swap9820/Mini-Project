@@ -1,4 +1,6 @@
-
+<?php
+ include 'header.php';
+?>
 <main>
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -27,6 +29,21 @@
       <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
           <a class="nav-link"  >Sign Up</a>
         </li>
+        <li class="dropleft">
+            <button class="bg-dark border-dark" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Mumbai</a>
+              <a class="dropdown-item" href="#">New Delhi</a>
+              <a class="dropdown-item" href="#">Chennai</a>
+              <a class="dropdown-item" href="#">Bangalore</a>
+              <a class="dropdown-item" href="#">Pune</a>
+              <a class="dropdown-item" href="#">Kolkata</a>
+              <a class="dropdown-item" href="#">Hyderabad</a>
+              <a class="dropdown-item" href="#">Ahmedabad</a>
+            </div>
+          </li>
       
      </ul>
    </div>
@@ -71,15 +88,9 @@
 
      <div class="form-group">
         <label class="control-label col-sm-2" for="desc">Description:</label>
-        
-          <!-- <input type="text" class="form-control" id="desc" placeholder="Enter Event Description"> -->
           <textarea class="form-control" rows="3" name="desc"></textarea>
         </textarea>
       </div>
-
-
-
-<!-- <form class="container form-inline" action="includes/organiser.inc.php" method="post">--> 
  
   
   <div class="form-group  ">
@@ -99,7 +110,6 @@
   <!-- </div> -->
 
 <span class="container">
-<!-- <form class="container form-horizontal" action="includes/organiser.inc.php" method="post">-->
 
       <div class="form-group">
         <label class="control-label col-sm-2" for="venue">Venue:</label>
