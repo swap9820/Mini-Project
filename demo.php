@@ -1,4 +1,7 @@
+<?php
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,31 +67,13 @@
       <li class="nav-item">
         <a class="nav-link" href="organise.html">Organise</a>
       </li>
-     
-      
+      <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong">
+          <a class="nav-link" >Login</a>
+        </li>
         
-      <?php
-
-          if (isset($_SESSION['userUId'])) 
-           {
-           echo '<li class="nav-item logout" data-toggle="modal" data-target="#exampleModalLong">
-            <a class="nav-link" href="includes/logout.inc.php" >Logout</a>
-           </li>';
-           }
-          else
-           {
-          echo'<li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
+      <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
           <a class="nav-link"  >Sign Up</a>
         </li>
-        <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong2">
-          <a class="nav-link" >Login</a>
-        </li>';
-          }
-          ?>
-
-      
-      
-        
         
         
           <li class="dropleft">
@@ -107,12 +92,12 @@
             </div>
           </li>
          
+        
       
      </ul>
    </div>
   </div>
   </nav>
-  </header>
   
     <!-- signup form -->
     <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -160,10 +145,24 @@
           </div>
       </div>
  
+</header>
+<?php
+          if(isset($_SESSION['userId']))
+          {
+            echo '<li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong">
+            <a class="nav-link" >Logout</a>
+          </li>
+          <form id="basic-form" action="includes/logout.inc.php" class="needs-validation" method="post" novalidate>
+                  
+            <button type="submit" name="logout-submit" class="btn btn-primary align-content-md-between">Logout</button>
+            </div>
+             </form>';
 
 
-       <!-- LOGIN FORM    -->
-      <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          }
+          else {
+            echo'
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -173,34 +172,40 @@
             </button>
           </div>
           <div class="modal-body" >
-                  <form id="basic-form" action="includes/login.inc.php" class="needs-validation" method="post" novalidate>
-                  <div class="form-group">
-                      <label for="inputUserName"><b>Username/E-mail</b></label>
-                      <input type="text" class="form-control" name="mailuid" id="inputUserName" placeholder="Username" required>
-                  </div>  
-                  <div class="form-group">
-                  <label for="psw3"><b>Password</b></label>
-                  <input type="password" class="form-control" name="pwd" id="psw1" placeholder="Password" required>
-                  <div class="invalid-feedback">Please enter your password to continue.</div>
-                </div>
-                     
-                <div class="form-group">
-                <label class="form-check-label"><input type="checkbox"> Remember me</label>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary"  onclick="clearFields()" data-dismiss="modal">Cancel</button>
-            <button type="submit" name="login-submit" class="btn btn-primary align-content-md-between">Login</button>
-        </div>
+                  <form id="basic-form" action="/examples/actions/confirmation.php" class="needs-validation" method="post" novalidate>
+                    <div class="form-group">
+                        <label for="inputUserName"><b>Username</b></label>
+                        <input type="text" class="form-control" id="inputUserName" placeholder="Username" required>
+                        
+                    </div>  
+                    <div class="form-group">
+                          <label for="inputEmail"><b>Email</b></label>
+                          <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                          <div class="invalid-feedback">Please enter a valid email address.</div>
+                      </div>
+                      <div class="form-group">
+                          <label for="psw3"><b>Password</b></label>
+                          <input type="password" class="form-control" id="psw1" placeholder="Password" required>
+                          <div class="invalid-feedback">Please enter your password to continue.</div>
+                      </div>
+                      <div class="form-group">
+                          <label class="form-check-label"><input type="checkbox"> Remember me</label>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary"  onclick="clearFields()" data-dismiss="modal">Cancel</button>
+                          <button type="submit" class="btn btn-primary align-content-md-between">Login</button>
+                      
+              </div>
              
             </div>
           </div>
         
       </div>
       </div>
-    </form>
+    </form>';
             
-          
-
+          }
+?>
 <script>
  (function() {
                 'use strict';

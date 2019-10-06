@@ -1,10 +1,20 @@
 <?php
+session_start();
 include 'header.php';
 
 ?>
 
 <main>
-<header>
+<?php
+
+if (isset($_SESSION['userUId'])) {
+  echo '<p> You are logged in</p>';
+}
+else {
+  echo'<p>You are logged out</p>';
+}
+?>
+<!-- <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand"><img src="images/logo3.jpg"></a>
@@ -35,7 +45,7 @@ include 'header.php';
      </ul>
    </div>
   </div>
-  </nav>
+  </nav> -->
 
 <body>
   <!-- <! Image slider/carousel >   -->
@@ -75,8 +85,8 @@ include 'header.php';
   
      
     </div>
-    <p>You are logged in</p>
-    <p>You are logged out</p>
+    
+
 
 
   <section>
