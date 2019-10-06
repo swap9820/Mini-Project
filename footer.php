@@ -40,52 +40,126 @@
     </style>
     
 </head>
+<section>
 
-<section style="padding-top: 5.5%">
-  <div class="footer" >
-    <div class="footer-content">
-      <div class="footer-section about"></div>
-        <h1 class="logo-text"><span>Pol</span>aris</h1>
-        <p>
-          Polaris is website created by a group of people.
-        </p>
-        <div class="contact">
-          <span><i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 123-456-789</span>
-          <span><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp; infopolaris@gmail.com</span>
-        </div>
-        <div class="socials">
-          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-          <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-          
-        </div>
-      <div class="footer-section links">
-        <h2>Quick Links</h2>
-        <br>
-        <ul>
-          <a href="#"><li>Events</li></a>
-          <a href="#"><li>Team</li></a>
-          <a href="#"><li>Mentores</li></a>
-          <a href="#"><li>Terms and Conditions</li></a>
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content.</p>
+        <p>.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <a href="#!">PROJECTS</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="#!">ABOUT US</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="#!">BLOG</a>
+            </p>
+          </li>
         </ul>
-      </div>
-      <div class="footer-section contact-form">
-        <h2>Contact us</h2>
-        <br>
-        <form action="index.html" method="post">
-          <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-          <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
-          <button type="submit" class="btn btn-big">
-            <i class="fa fa-envelope"></i>
-            Send
-          </button>
-        </form>
-      </div>
-    </div>
 
-    <div class="footer-bottom">
-      &copy;
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+
+        <!-- Contact details -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <p>
+              <i class="fa fa-home mr-3"></i> xyz, XY 420006, IN</p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-envelope mr-3"></i> polaris@gmail.com</p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+          </li>
+          <li>
+            <p>
+              <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+
+        <!-- Social buttons -->
+        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+
+        <!-- Facebook -->
+        <a type="button" class="btn-floating btn-fb">
+          <i class="fa fa-facebook-f"></i>
+        </a>
+        <!-- Twitter -->
+        <a type="button" class="btn-floating btn-tw">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <!-- Google +-->
+        <a type="button" class="btn-floating btn-gplus">
+          <i class="fa fa-google-plus-g"></i>
+        </a>
+        <!-- Dribbble -->
+        <a type="button" class="btn-floating btn-dribbble">
+          <i class="fa fa-dribbble"></i>
+        </a>
+
+      </div>
+      <!-- Grid column -->
+
     </div>
-  </div> 
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="https://mdbootstrap.com/education/bootstrap/"></a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
 </section>   
