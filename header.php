@@ -39,7 +39,12 @@
  float:right;
 }
 
-    </style>
+</style>
+<script>
+  function alertUser(msg){
+    alert(msg);
+  }
+</script>
     
 </head>
 <!-- NAVBAR -->

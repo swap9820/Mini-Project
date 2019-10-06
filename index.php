@@ -47,7 +47,7 @@ else {
   </div>
   </nav> -->
 
-<body>
+<body >
   <!-- <! Image slider/carousel >   -->
   
 <div id="slides" class="carousel slide  " data-ride="carousel" >
