@@ -27,7 +27,7 @@ if(isset($_POST['insertdata']))
 
     }
 
-   else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
+  /* else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
       header("Location: ../index.php?error=invalidemail&name");
     exit();
 
@@ -40,12 +40,12 @@ if(isset($_POST['insertdata']))
     exit();
   }
 
-   elseif(!preg_match("/^[a-zA-Z0-9]*$/", $name ))
+   elseif(!preg_match("/^[a-zA-Z0-9]*$/", $email ))
    { 
       header("Location: ../index.php?error=invaliduid&mail=".$email);
       exit();
       
-   }
+   }*/
   
 else{
   $query = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
