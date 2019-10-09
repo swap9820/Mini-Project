@@ -43,61 +43,33 @@
 <section>
 
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer class="page-footer font-small bg-dark pt-4">
 
   <!-- Footer Links -->
-  <div class="container text-center text-md-left">
+  <div class="container  text-center text-md-left">
 
     <!-- Grid row -->
     <div class="row">
 
       <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
+      <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1 text-white">
 
         <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-        <p>.</p>
+        <h5 class="font-weight-bold text-uppercase text-white mb-4">POLARIS</h5>
+        <p>POLARIS is a platform that helps you discover and book the best events around you and also you can arrange various educational events through this platform.</p>
 
       </div>
+
+     
       <!-- Grid column -->
 
       <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mb-4">About</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <p>
-              <a href="#!">PROJECTS</a>
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href="#!">ABOUT US</a>
-            </p>
-          </li>
-          <li>
-            <p>
-              <a href="#!">BLOG</a>
-            </p>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none">
-
-      <!-- Grid column -->
-      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+      <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1 text-white">
 
         <!-- Contact details -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Address</h5>
+        <h5 class="font-weight-bold text-uppercase text-white mb-4">Address</h5>
 
         <ul class="list-unstyled">
           <li>
@@ -124,10 +96,10 @@
       <hr class="clearfix w-100 d-md-none">
 
       <!-- Grid column -->
-      <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
+      <div class="col-md-2 col-lg-2 text-center mx-auto my-4 ">
 
         <!-- Social buttons -->
-        <h5 class="font-weight-bold text-uppercase mb-4">Follow Us</h5>
+        <h5 class="font-weight-bold text-uppercase text-white mb-4">Follow Us</h5>
 
         <!-- Facebook -->
         <a type="button" class="btn-floating btn-fb">
@@ -156,7 +128,7 @@
   <!-- Footer Links -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+  <div class="footer-copyright text-center py-3">
     <a href="https://mdbootstrap.com/education/bootstrap/"></a>
   </div>
   <!-- Copyright -->
