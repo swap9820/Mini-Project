@@ -37,6 +37,6 @@ include 'header.php';
   </div>
   </nav>
 
-
+<?php include 'includes/event.inc.php'; ?>
   <?php include 'footer.php' ?>
    

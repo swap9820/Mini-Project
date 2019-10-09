@@ -43,10 +43,10 @@
 <section>
 
 <!-- Footer -->
-<footer class="page-footer font-small special-color-dark pt-4">
+<footer class="page-footer special-color-dark font-small  pt-4">
 
   <!-- Footer Links -->
-  <div class="container text-center text-md-left">
+  <div class="container  text-center text-md-left">
 
     <!-- Grid row -->
     <div class="row">
