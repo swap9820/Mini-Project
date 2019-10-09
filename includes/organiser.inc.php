@@ -27,14 +27,14 @@ if(isset($_POST['insertdata']))
 
     }
 
-  /* else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
+   else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
       header("Location: ../index.php?error=invalidemail&name");
     exit();
 
 
    }
      
-  else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+  /*else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
   { 
     header("Location: ../index.php?error=invalidemail&name=".$name);
     exit();
