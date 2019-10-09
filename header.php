@@ -76,13 +76,16 @@
 
           if (isset($_SESSION['userUId'])) 
            {
+             
            echo '<li class="nav-item logout" data-toggle="modal" data-target="#exampleModalLong">
             <a class="nav-link" href="includes/logout.inc.php" >Logout</a>
            </li>';
            }
           else
            {
-          echo'<li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
+          echo'
+         
+          <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
           <a class="nav-link"  >Sign Up</a>
         </li>
         <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong2">
@@ -204,7 +207,7 @@
       </div>
     </form>
             
-          
+     
 
 <script>
  (function() {

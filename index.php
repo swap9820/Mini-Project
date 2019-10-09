@@ -5,15 +5,7 @@ include 'header.php';
 ?>
 
 <main>
-<?php
 
-if (isset($_SESSION['userUId'])) {
-  echo '<p> You are logged in</p>';
-}
-else {
-  echo'<p>You are logged out</p>';
-}
-?>
 <!-- <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
@@ -75,22 +67,22 @@ else {
       </ul>
       <div class="carousel-inner" >
           <div class="carousel-item active">
-              <img style="width: 100% ;max-height: 350px" src="images/competitions.jpg" >
+              <img style="width: 100% ;max-height: 500px" src="images/competitions.jpg" >
             </div>
         <div class="carousel-item">
-          <img style="width: 100% ;max-height: 350px" src="images/kids.jpg" >
+          <img style="width: 100% ;max-height: 500px" src="images/kids.jpg" >
         </div>
         <div class="carousel-item">
-          <img style="width: 100% ;max-height: 350px" src="images/wisdom.jpg" >
+          <img style="width: 100% ;max-height: 500px" src="images/wisdom.jpg" >
         </div>
         <div class="carousel-item">
-          <img style="width: 100% ;max-height: 350px" src="images/longboard.jpg" >
+          <img style="width: 100% ;max-height: 500px" src="images/longboard.jpg" >
         </div>
           <div class="carousel-item">
-              <img style="width: 100% ;max-height: 350px" src="images/workshop.jpg" >
+              <img style="width: 100% ;max-height: 500px" src="images/workshop.jpg" >
             </div>
             <div class="carousel-item">
-                <img style="width: 100% ;max-height: 350px" src="images/cycle.jpg" >
+                <img style="width: 100% ;max-height: 500px" src="images/cycle.jpg" >
             </div>
                   
       </div>
@@ -99,6 +91,18 @@ else {
   
      
     </div>
+    
+          <?php
+
+            if (isset($_SESSION['userUId'])) 
+            {
+            echo '<div class="alert alert-success" role="alert">';
+            echo 'Welcome '.$_SESSION['userUId'];
+            echo'</div>';
+            }
+
+            
+        ?>
     
 
 
