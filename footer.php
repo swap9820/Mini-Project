@@ -17,6 +17,7 @@
        #error_msg{color:red; font-weight:bold;}
       *{
         margin: 0%; padding: 0%;  font-family: 'Adamina', serif;
+       
 
 
       }
@@ -112,10 +113,6 @@
         <!-- Google +-->
         <a type="button" class="btn-floating btn-gplus">
           <i class="fa fa-google-plus-g"></i>
-        </a>
-        <!-- Dribbble -->
-        <a type="button" class="btn-floating btn-dribbble">
-          <i class="fa fa-dribbble"></i>
         </a>
 
       </div>
