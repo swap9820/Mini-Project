@@ -72,7 +72,7 @@ include 'header.php';
         <img class="card-img-top" src="images/competitions.jpg" alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h5 class="card-title">Competitions</h5>
-          <p class="card-text">For knowing the capability of the students, various competitions will be held.</p>
+          <p class="card-text">For knowing the capability of the students, various competitions for the students will be held in different cities across India.</p>
           <a href="competitions.php" class="btn btn-primary stretched-link">Explore</a>
         </div>
       </div>
@@ -118,7 +118,7 @@ include 'header.php';
             <img class="card-img-top" src="images/paint.jpg" alt="Card image cap" style="height:12rem;">
             <div class="card-body">
               <h5 class="card-title">Art</h5>
-              <p class="card-text">This is the platform where you can explore your creativity.</p>
+              <p class="card-text">Art is often considered the process of deliberately arranging elements in a way that appeals the senses so this is the platform where you can explore your creativity.</p>
               <a href="art.php" class="btn btn-primary stretched-link">Explore</a>
             </div>
           </div>
