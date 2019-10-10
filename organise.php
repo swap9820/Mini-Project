@@ -62,7 +62,7 @@ include 'header.php';
           <select class="form-control" id="Category" name="category">
             <option value="" selected disabled>Please select category</option>
             <option>Workshops</option>
-            <option>Classes</option>
+            <option>Art</option>
             <option>Sports tournaments</option>
             <option>Educational talks</option>
             <option>Treks</option>
