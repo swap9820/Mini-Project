@@ -34,54 +34,21 @@ if(isset($_POST['insert-data']))
   if (in_array( $targetActualExt ,$allowed )) {
     if ($targetError===0) {
       if ($targetSize<1000000) {
-        $fileNameNew=uniqid('',true).".".$targetActualExt;
-        $targetDestination = 'uploads/'.$fileNameNew;
-        move_uploaded_file($targetTmpName,$targetDestination);
-        header("Location: ../organise.php?uploadsuccess");
-      }
-      else {
-        echo "File is too big!";
-      }
-      
-    }
-    else {
-      echo "There was an error!";
-    }
-  }
-  else {
-    echo "You cannot upload this type of file";
-  }
 
- if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
-    {
-        header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
+        if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
+        {
+            header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
+            exit();
+    
+        }
+    
+       else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
+          header("Location: ../index.php?error=invalidemail&name");
         exit();
-
-    }
-
-   else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $name )){
-      header("Location: ../index.php?error=invalidemail&name");
-    exit();
-
-
-   }
-     
-  /*else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
-  { 
-    header("Location: ../index.php?error=invalidemail&name=".$name);
-    exit();
-  }
-
-   elseif(!preg_match("/^[a-zA-Z0-9]*$/", $email ))
-   { 
-      header("Location: ../index.php?error=invaliduid&mail=".$email);
-      exit();
-      
-   }*/
-  
- 
-  
-   else
+    
+    
+       }
+       else
    {
           $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
           $stmt = mysqli_stmt_init($conn);
@@ -96,6 +63,10 @@ if(isset($_POST['insert-data']))
               mysqli_stmt_bind_param($stmt, "ssssssiisis", $name, $email, $event, $category, $desc, $date, $from, $to, $venue, $price, $image);
                mysqli_stmt_execute($stmt);
                //mysqli_stmt_store_result($stmt);
+               $fileNameNew=uniqid('',true).".".$targetActualExt;
+               $targetDestination = 'uploads/'.$fileNameNew;
+               move_uploaded_file($targetTmpName,$targetDestination);
+               //header("Location: ../organise.php?uploadsuccess");
                header("Location: ../index.php?storage=success");
                
                exit();
@@ -112,6 +83,40 @@ if(isset($_POST['insert-data']))
           }*/
 
    }
+
+       
+      }
+      else {
+        echo "File is too big!";
+      }
+      
+    }
+    else {
+      echo "There was an error!";
+    }
+  }
+  else {
+    echo "You cannot upload this type of file";
+  }
+
+
+     
+  /*else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+  { 
+    header("Location: ../index.php?error=invalidemail&name=".$name);
+    exit();
+  }
+
+   elseif(!preg_match("/^[a-zA-Z0-9]*$/", $email ))
+   { 
+      header("Location: ../index.php?error=invaliduid&mail=".$email);
+      exit();
+      
+   }*/
+  
+ 
+  
+   
    mysqli_stmt_close($stmt);
    mysqli_close($conn);
 }

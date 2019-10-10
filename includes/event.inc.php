@@ -1,15 +1,20 @@
-<?php
-$conn= mysqli_connect("localhost","root","");
-$db = mysqli_select_db($conn,'loginsystem');
-$sql = "SELECT `name`,`email`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise";
-$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-while( $record = mysqli_fetch_assoc($resultset) ) {
-?>
+
+
+
+
 <div class="container pt-5">
 <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12">
         <div class="card text-center" >
-        <img class="card-img-top" src="<?php echo $record['image']; ?>" alt="Card image cap" style="height:12rem;">
+          
+        <img class="card-img-top" src="
+        <?php 
+        require 'dbh.inc.php';
+        $sql="SELECT * FROM images";
+        $result=mysqli_query($conn,$sql);
+        while($row=mysqli_fetch_array($result)){
+          echo "<img src='uploads/".$row['image']."'>";
+         ?>" alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h5 class="card-title"><?php echo $record['name']; ?></h5>
           <p class="card-text"><?php echo $record['desc']; ?></p>
@@ -41,5 +46,6 @@ while( $record = mysqli_fetch_assoc($resultset) ) {
 
 </div>
 </div>-->
-<?php }
+<?php 
+        }
 ?>
