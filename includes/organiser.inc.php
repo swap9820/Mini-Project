@@ -54,7 +54,7 @@ if(isset($_POST['insert-data']))
 
  if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
     {
-        header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
+        header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price);
         exit();
 
     }
@@ -81,7 +81,7 @@ if(isset($_POST['insert-data']))
   
  
   
-   else
+  else
    {
           $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
           $stmt = mysqli_stmt_init($conn);
@@ -111,11 +111,11 @@ if(isset($_POST['insert-data']))
             echo '<script> alert("Data Not Saved");</script>';
           }*/
 
-   }
+ }
    mysqli_stmt_close($stmt);
    mysqli_close($conn);
 }
 else {
   header("Location: ../index.php");
   exit();
-}
+}*/
