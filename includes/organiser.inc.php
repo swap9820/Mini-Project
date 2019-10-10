@@ -3,8 +3,22 @@
 //$connection = mysqli_connect("localhost","root","");
 //$db = mysqli_select_db($conn,'organiser');
 
-if(isset($_POST['upload']))
+/*
+*/
+if(isset($_POST['insert-data']))
 {
+  
+  require 'dbh.inc.php';
+  $name= $_POST['name'];
+  $email= $_POST['email'];
+  $event= $_POST['event'];
+  $category= $_POST['category'];
+  $desc= $_POST['desc'];
+  $date= $_POST['date'];
+  $from= $_POST['from'];
+  $to= $_POST['to'];
+  $venue= $_POST['venue'];
+  $price= $_POST['price'];
   $target = $_FILES['image'];  
 
   $targetname = $_FILES['image']['name'];
@@ -37,22 +51,6 @@ if(isset($_POST['upload']))
   else {
     echo "You cannot upload this type of file";
   }
-}
-
-if(isset($_POST['insert-data']))
-{
-  require 'dbh.inc.php';
-  $name= $_POST['name'];
-  $email= $_POST['email'];
-  $event= $_POST['event'];
-  $category= $_POST['category'];
-  $desc= $_POST['desc'];
-  $date= $_POST['date'];
-  $from= $_POST['from'];
-  $to= $_POST['to'];
-  $venue= $_POST['venue'];
-  $price= $_POST['price'];
- 
 
  if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
     {
