@@ -51,7 +51,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="images/logo3.jpg"></a>
+    <a class="navbar-brand"><img src="images/logo3.jpg" ></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span class="navbar-toggler-icon bg-dark "></span>
       <span class="icon-bar"></span>
