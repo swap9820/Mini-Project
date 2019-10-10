@@ -87,11 +87,11 @@ include 'header.php';
           <input type="date" class="form-control" id="date" name="date">
         </div>
         <div class="form-group col-sm-4 ">
-          <label  for="time">Time :  </label>
+          <label  for="time">From :  </label>
           <input type="time" class="form-control" id="time" name="from">
         </div>
         <div class="form-group col-sm-4">
-          <label for="duration">Duration :  </label>
+          <label for="duration">To :  </label>
           <input type="time" class="form-control" id="duration" name="to">
           </div>
     </div>
