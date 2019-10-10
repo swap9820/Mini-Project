@@ -61,13 +61,13 @@
    <div class="collapse navbar-collapse" id="navbarResponsive">
      <ul class="navbar-nav ml-auto">
       <li>
-         <a class="nav-link active " href="index.html">Home</a>
+         <a class="nav-link active " href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="event.html">Events</a>
+        <a class="nav-link" href="event.php">Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="organise.html">Organise</a>
+        <a class="nav-link" href="organise.php">Organise</a>
       </li>
      
       

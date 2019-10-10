@@ -1,11 +1,12 @@
 <?php
 
-$connection = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($connection,'organiser');
+//$connection = mysqli_connect("localhost","root","");
+//$db = mysqli_select_db($conn,'organiser');
 
 
-if(isset($_POST['insertdata']))
+if(isset($_POST['insert-data']))
 {
+  require 'dbh.inc.php';
   $name= $_POST['name'];
   $email= $_POST['email'];
   $event= $_POST['event'];
@@ -20,7 +21,7 @@ if(isset($_POST['insertdata']))
   $image= $_FILES['image']['name'];
  
 
- if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price) || empty($image))
+ if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
     {
         header("Location: ../index.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
         exit();
@@ -47,18 +48,43 @@ if(isset($_POST['insertdata']))
       
    }*/
   
-else{
-  $query = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
-  $query_run = mysqli_query($connection,$query);
+ 
+  
+   else
+   {
+          $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+          $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt, $sql))
+            {
+               header("Location: ../index.php?error=sqlerror");
+               exit();
 
-  if($query_run)
-  {
-      echo '<script> alert("Data Saved");</script>';
-      header('Location: ../index.php');
-  }
-  else{
-    echo '<script> alert("Data Not Saved");</script>';
-  }
+            }
+             else 
+             {
+              mysqli_stmt_bind_param($stmt, "ssssssiisis", $name, $email, $event, $category, $desc, $date, $from, $to, $venue, $price, $image);
+               mysqli_stmt_execute($stmt);
+               //mysqli_stmt_store_result($stmt);
+               header("Location: ../index.php?storage=success");
+               
+               exit();
+             }
+          /*$query_run = mysqli_query($conn,$query);
+
+          if($query_run)
+          {
+              echo '<script> alert("Data Saved");</script>';
+              header('Location: ../index.php');
+          }
+          else{
+            echo '<script> alert("Data Not Saved");</script>';
+          }*/
+
+   }
+   mysqli_stmt_close($stmt);
+   mysqli_close($conn);
 }
+else {
+  header("Location: ../index.php");
+  exit();
 }
-?>

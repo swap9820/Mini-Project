@@ -1,6 +1,6 @@
 <?php
+session_start();
 include 'header.php';
-
 ?>
 
 <main>
@@ -38,18 +38,18 @@ include 'header.php';
   </nav>
 
   <span class="border ">
-  <form  class="container form-horizontal" action="includes/organiser.inc.php" enctype="multipart/form-data" method="post">
-  <div class="form-row">
-  <div class="form-group col-sm-6 ">
-      <label class="control-label col-sm-4" for="name">Name:</label>
+   <form  class="container form-horizontal" action="includes/organiser.inc.php" enctype="multipart/form-data" method="post">
+     <div class="form-row">
+      <div class="form-group col-sm-6 ">
+        <label class="control-label col-sm-4" for="name">Name:</label>
         <input type="text" class="form-control" name="name" placeholder="Enter name">
-    </div>
+      </div>
       
-    <div class="form-group col-sm-6">
-      <label class="control-label col-sm-4" for="email">Email:</label>
-        <input type="email" class="form-control" name="email" placeholder="Enter email">  
-    </div>
-  </div>
+        <div class="form-group col-sm-6">
+          <label class="control-label col-sm-4" for="email">Email:</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">  
+        </div>
+    </div> 
 
   <div class="form-row">
     <div class="form-group col-sm-6">
@@ -57,21 +57,21 @@ include 'header.php';
           <input type="text" class="form-control" name="event" placeholder="Enter Event Name">
     </div>
 
-	 <div class="form-group col-sm-6">
-    <label class="control-label col-sm-4" for="Category">Category:</label>  
-    <select class="form-control" id="Category" name="category">
-      <option value="" selected disabled>Please select category</option>
-      <option>Workshops</option>
-      <option>Classes</option>
-      <option>Sports tournaments</option>
-      <option>Educational talks</option>
-      <option>Treks</option>
-	    <option>NGOs</option>
-	    <option>Competitions</option>
-	    <option>Others</option>
-     </select>
-     </div>
-    </div>
+	      <div class="form-group col-sm-6">
+          <label class="control-label col-sm-4" for="Category">Category:</label>  
+          <select class="form-control" id="Category" name="category">
+            <option value="" selected disabled>Please select category</option>
+            <option>Workshops</option>
+            <option>Classes</option>
+            <option>Sports tournaments</option>
+            <option>Educational talks</option>
+            <option>Treks</option>
+            <option>NGOs</option>
+            <option>Competitions</option>
+            <option>Others</option>
+          </select>
+         </div>
+  </div>
 
      <div class="form-group">
         <label class="control-label col-sm-2" for="desc">Description:</label>
@@ -82,19 +82,19 @@ include 'header.php';
       </div>
 
    <div class="d-inline-flex"> 
-  <div class="form-group col-sm-10 ">
-    <label  for="date">Date :</label>
-    <input type="date" class="form-control" id="date" name="date">
-  </div>
-  <div class="form-group col-sm-4 ">
-    <label  for="time">Time :  </label>
-    <input type="time" class="form-control" id="time" name="from">
-  </div>
-  <div class="form-group col-sm-4">
-    <label for="duration">Duration :  </label>
-    <input type="time" class="form-control" id="duration" name="to">
+        <div class="form-group col-sm-10 ">
+          <label  for="date">Date :</label>
+          <input type="date" class="form-control" id="date" name="date">
+        </div>
+        <div class="form-group col-sm-4 ">
+          <label  for="time">Time :  </label>
+          <input type="time" class="form-control" id="time" name="from">
+        </div>
+        <div class="form-group col-sm-4">
+          <label for="duration">Duration :  </label>
+          <input type="time" class="form-control" id="duration" name="to">
+          </div>
     </div>
- </div>
 
 <span class="container form-horizontal">
 
@@ -114,13 +114,14 @@ include 'header.php';
               <input type="file" class="form-control" id="img" placeholder="Upload image" name="image">
           </div> 
     
-    <div class="form-group"> 
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-dark border-dark" name="insertdata">Submit</button>
-      </div>
-    </div>
-    </form>
+       <div class="form-group"> 
+         <div class="col-sm-offset-2 col-sm-10">
+         <button type="submit" class="btn btn-dark border-dark" name="insert-data">Submit</button>
+         </div>
+        </div>
   </span>
+  </form>
     </span>
-    <?php include 'footer.php' ?>
+    <?php include 'footer.php' 
+    ?>
  
