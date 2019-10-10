@@ -116,7 +116,9 @@ include 'header.php';
     
        <div class="form-group"> 
          <div class="col-sm-offset-2 col-sm-10">
+         <button type="file" class="btn btn-dark border-dark" name="upload">UPLOAD IMAGE</button>
          <button type="submit" class="btn btn-dark border-dark" name="insert-data">Submit</button>
+         
          </div>
         </div>
   </span>
