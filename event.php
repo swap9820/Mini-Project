@@ -72,7 +72,7 @@ include 'header.php';
         <img class="card-img-top" src="images/competitions.jpg" alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h5 class="card-title">Competitions</h5>
-          <p class="card-text"></p>
+          <p class="card-text">For knowing the capability of the students, various competitions will be held.</p>
           <a href="competitions.php" class="btn btn-primary stretched-link">Explore</a>
         </div>
       </div>
@@ -82,7 +82,7 @@ include 'header.php';
         <img class="card-img-top" src="images/trek.jpg" alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h5 class="card-title">Trek</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">If you are adventurer and looking for treks that will not only give you an adrenaline rush but also excellent photo opportunities.</p>
           <a href="trek.php" class="btn btn-primary stretched-link">Explore</a>
         </div>
       </div>
@@ -98,7 +98,7 @@ include 'header.php';
             <img class="card-img-top" src="images/ngo.jpg" alt="Card image cap" style="height:12rem;">
             <div class="card-body">
               <h5 class="card-title">NGO</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">If you want to do something for your society on a broad scale then NGOs play a critical part in developing society, improving communities.</p>
               <a href="ngo.php" class="btn btn-primary stretched-link">Explore</a>
             </div>
           </div>
@@ -108,7 +108,7 @@ include 'header.php';
             <img class="card-img-top" src="images/talks.jpg" alt="Card image cap" style="height:12rem;">
             <div class="card-body">
               <h5 class="card-title">Talks</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">If you are looking for inspiration then this is the right platform where you'll find talks on every topic you need.</p>
               <a href="talks.php" class="btn btn-primary stretched-link">Explore</a>
             </div>
           </div>
@@ -118,7 +118,7 @@ include 'header.php';
             <img class="card-img-top" src="images/paint.jpg" alt="Card image cap" style="height:12rem;">
             <div class="card-body">
               <h5 class="card-title">Art</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">This is the platform where you can explore your creativity.</p>
               <a href="art.php" class="btn btn-primary stretched-link">Explore</a>
             </div>
           </div>
@@ -132,7 +132,7 @@ include 'header.php';
                 <img class="card-img-top" src="images/cycle.jpg" alt="Card image cap" style="height:12rem;">
                 <div class="card-body">
                   <h5 class="card-title">Sports</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">If you want to play some amazing sports and show your talent to others then this is the right platform.</p>
                   <a href="sports.php" class="btn btn-primary stretched-link">Explore</a>
                 </div>
               </div>
