@@ -3,6 +3,7 @@ $conn= mysqli_connect("localhost","root","");
 $db = mysqli_select_db($conn,'loginsystem');
 $sql = "SELECT `name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise";
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
+
 while( $record = mysqli_fetch_assoc($resultset) ) {
 ?>
 <section>
@@ -10,7 +11,7 @@ while( $record = mysqli_fetch_assoc($resultset) ) {
 <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12">
         <div class="card text-center" >
-        <img class="card-img-top" src="uploads/" alt="Card image cap" style="height:12rem;">
+        <img class="card-img-top" src="uploads/'.$row['image'].'"  alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h3 class="card-title"><?php echo $record['event']; ?></h3>
           

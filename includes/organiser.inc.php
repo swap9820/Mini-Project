@@ -1,64 +1,58 @@
 <?php
 
-//$connection = mysqli_connect("localhost","root","");
-//$db = mysqli_select_db($conn,'organiser');
+$db = mysqli_connect("localhost", "root", "","loginsystem");
+//$db = mysqli_select_db($conn,'loginsystem');
 
-/*
-*/
+// Initialize message variable
+$msg = "";
+
+
 if(isset($_POST['insert-data']))
 {
   
-  require 'dbh.inc.php';
-  $name= $_POST['name'];
-  $email= $_POST['email'];
-  $event= $_POST['event'];
-  $category= $_POST['category'];
-  $desc= $_POST['desc'];
-  $date= $_POST['date'];
-  $from= $_POST['from'];
-  $to= $_POST['to'];
-  $venue= $_POST['venue'];
-  $price= $_POST['price'];
-  $target = $_FILES['image'];  
+  //require 'dbh.inc.php';
+  $name= mysqli_real_escape_string($db,$_POST['name']);
+  $email=mysqli_real_escape_string($db, $_POST['email']);
+  $event= mysqli_real_escape_string($db,$_POST['event']);
+  $category=mysqli_real_escape_string($db, $_POST['category']);
+  $desc= mysqli_real_escape_string($db,$_POST['desc']);
+  $date= mysqli_real_escape_string($db,$_POST['date']);
+  $from=mysqli_real_escape_string($db,$_POST['from']);
+  $to= mysqli_real_escape_string($db,$_POST['to']);
+  $venue= mysqli_real_escape_string($db,$_POST['venue']);
+  $price= mysqli_real_escape_string($db,$_POST['price']);
 
-  $targetname = $_FILES['image']['name'];
-  $targetTmpName = $_FILES['image']['tmp_name'];
-  $targetSize = $_FILES['image']['size'];
-  $targetError = $_FILES['image']['error'];
-  $targetType = $_FILES['image']['type'];
-  //$image= $_FILES['image']['name'];
-  $targetExt=explode('.',$targetname);
-  $targetActualExt= strtolower(end($targetExt));
-  $allowed=array('jpg','jpeg','png');
+  // Get image name
+  $image = $_FILES['image']['name'];
+  // Get text
+  //$image_text = mysqli_real_escape_string($db, $_POST['image_text']);
 
-  if (in_array( $targetActualExt ,$allowed )) {
-    if ($targetError===0) {
-      if ($targetSize<1000000) {
-        $fileNameNew=uniqid('',true).".".$targetActualExt;
-        $targetDestination = 'uploads/'.$fileNameNew;
-        move_uploaded_file($targetTmpName,$targetDestination);
-       
+  // image file directory
+  $target = "uploads/".basename($image);
 
-//$connection = mysqli_connect("localhost","root","");
-//$db = mysqli_select_db($conn,'organiser');
-
-/*
-*/
-if(isset($_POST['insert-data']))
-{
+  //$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+  // execute query
+  //mysqli_query($db, $sql);
+  $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
+  /*$stmt = mysqli_stmt_init($conn);
+  $query_run = mysqli_query($conn,$stmt);*/
   
-  require 'dbh.inc.php';
-  $name= $_POST['name'];
-  $email= $_POST['email'];
-  $event= $_POST['event'];
-  $category= $_POST['category'];
-  $desc= $_POST['desc'];
-  $date= $_POST['date'];
-  $from= $_POST['from'];
-  $to= $_POST['to'];
-  $venue= $_POST['venue'];
-  $price= $_POST['price'];
-  $target = $_FILES['image'];  
+  mysqli_query($db, $sql);
+
+         
+              if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+                $msg = "Image uploaded successfully";
+                echo "$msg";
+              }else{
+                $msg = "Failed to upload image";
+                echo "$msg";
+              }
+              
+ 
+}
+
+
+ /* $target = $_FILES['image'];  
 
   $targetname = $_FILES['image']['name'];
   $targetTmpName = $_FILES['image']['tmp_name'];
@@ -121,7 +115,7 @@ if(isset($_POST['insert-data']))
   
  
   
-   else
+   /*else
    {
           $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
           $stmt = mysqli_stmt_init($conn);
@@ -151,10 +145,10 @@ if(isset($_POST['insert-data']))
             echo '<script> alert("Data Not Saved");</script>';
           }*/
 
-   }
-   mysqli_stmt_close($stmt);
+   //}
+  /* mysqli_stmt_close($stmt);
    mysqli_close($conn);
-}
+ /*
 else {
   header("Location: ../index.php");
   exit();
@@ -189,7 +183,7 @@ else {
 
    }
      
-  /*else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
+ else if(!filter_var($email, FILTER_VALIDATE_EMAIL))
   { 
     header("Location: ../index.php?error=invalidemail&name=".$name);
     exit();
@@ -200,7 +194,7 @@ else {
       header("Location: ../index.php?error=invaliduid&mail=".$email);
       exit();
       
-   }*/
+   }
   
  
   
@@ -232,7 +226,7 @@ else {
           }
           else{
             echo '<script> alert("Data Not Saved");</script>';
-          }*/
+          }
 
    }
    mysqli_stmt_close($stmt);
@@ -241,4 +235,4 @@ else {
 else {
   header("Location: ../index.php");
   exit();
-}
+}*/
