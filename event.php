@@ -151,25 +151,21 @@
        </div>
     </div>
     <div class="container pt-5 pb-3">
-        <div class="row card-deck">
+        <div class="row card-deck ">
             <div class="col-lg-4 col-md-4 col-12">
-                <div class="card text-center" >
-                <img class="card-img-top" src="images/cycle.jpg" alt="Card image cap" style="height:12rem;">
-                <div class="card-body">
+                <div class="card text-center image  " >
+                <img class="card-img-top " src="images/cycle.jpg" alt="Card image cap" style="height:12rem;">
+                <div class="card-body ">
                   <h5 class="card-title">Sports</h5>
                   <p class="card-text">If you want to play some amazing sports and show your talent to others then this is the right platform.</p>
-                  <a href="sports.php" class="btn btn-primary stretched-link">Explore</a>
-                </div>
-              </div>
-            </div>
-            
-            
-            
+                  </div>
+                  </div>
+                  <a href="sports.php" class="btn btn-primary stretched-link middle">Buy</a>
+                  </div>
            </div>
         </div>
         
-       
-              
+        
   </section>
   <?php include 'footer.php' ?>
 </main>

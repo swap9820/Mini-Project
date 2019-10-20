@@ -1,4 +1,47 @@
+<html>
+  <head>
+  <style>
+.containers {
+  position: relative;
+  width: 50%;
+}
 
+.image {
+  opacity: 1;
+  display: block;
+  
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+</head>
 
 <main>
 <header>
@@ -75,20 +118,22 @@
    </div>
   </div>
   </nav>
+  
   <?php
 $conn= mysqli_connect("localhost","root","");
 $db = mysqli_select_db($conn,'loginsystem');
-$sql = "SELECT `name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise where category='Ngos'";
+$sql = "SELECT * FROM organise where category='Ngos'";
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-while( $record = mysqli_fetch_assoc($resultset) ) {
+while( $record = mysqli_fetch_array($resultset) ) {
 ?>
 <section>
-<div class="container pt-5">
+<div class="container pt-5 containers">
 <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12">
-        <div class="card text-center" >
-        <img class="card-img-top" src="uploads/" alt="Card image cap" style="height:12rem;">
-        <div class="card-body">
+        <div class="card text-center " >
+        <img class="card-img-top" style="height:12rem" <?php echo "<img src='uploads/".$record['image']."' >"; ?>
+        
+        <div class="card-body image">
           <h3 class="card-title"><?php echo $record['event']; ?></h3>
           
           <p class="card-text"><?php echo $record['desc']; ?></p><hr>
@@ -97,11 +142,11 @@ while( $record = mysqli_fetch_assoc($resultset) ) {
           <div class="desc">FROM:<?php echo $record['from']; ?></div>
           <div class="desc">TO:<?php echo $record['to']; ?></div><hr>
           <div class="desc">PRICE:<?php echo $record['price']; ?></div><hr>
-          <div class="desc">For Further Details Contact:<?php echo $record['email']; ?></div>
-          <a href="workshop.php" class="btn btn-primary stretched-link">BUY TICKETS</a>
-        </div>
-      </div>
+          <div class="desc">For Further Details Contact:<?php echo $record['email']; ?></div></div>
     </div>
+          <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
+        </div>
+      
 </div>
 </section>
 <?php }

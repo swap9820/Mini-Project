@@ -1,4 +1,47 @@
+<html>
+  <head>
+  <style>
+.container {
+  position: relative;
+  width: 50%;
+}
 
+.image {
+  opacity: 1;
+  display: block;
+  
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+</head>
 
 <main>
 <header>
@@ -76,7 +119,7 @@
   </div>
   </nav>
   </header>
-
+  <img class="card-img-top" src="uploads/'.$row['image'].'" alt="Card image cap" style="height:12rem;">
   <?php
 $conn= mysqli_connect("localhost","root","");
 $db = mysqli_select_db($conn,'loginsystem');
@@ -88,22 +131,21 @@ while( $record = mysqli_fetch_assoc($resultset) ) {
 <div class="container pt-5">
 <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12">
-        <div class="card text-center" >
-        <img class="card-img-top" src="uploads/" alt="Card image cap" style="height:12rem;">
+        <div class="card text-center image" >
+        <img class="card-img-top" src="uploads/'.$row['image'].'" alt="Card image cap" style="height:12rem;">
         <div class="card-body">
           <h3 class="card-title"><?php echo $record['event']; ?></h3>
           
-          <p class="card-text"><?php echo $record['desc']; ?></p><hr>
-          <div class="desc">DATE:<?php echo $record['date']; ?></div><hr>
-          <div class="desc">VENUE:<?php echo $record['venue']; ?></div><hr>
-          <div class="desc">FROM:<?php echo $record['from']; ?></div>
-          <div class="desc">TO:<?php echo $record['to']; ?></div><hr>
-          <div class="desc">PRICE:<?php echo $record['price']; ?></div><hr>
-          <div class="desc">For Further Details Contact:<?php echo $record['email']; ?></div>
-          <a href="workshop.php" class="btn btn-primary stretched-link">BUY TICKETS</a>
-        </div>
-      </div>
+          <p class="card-text"><?php echo $record['desc']; ?></p>
+          <div class=" card-text ">DATE:<?php echo $record['date']; ?></div>
+          <div class=" card-text">VENUE:<?php echo $record['venue']; ?></div>
+          <div class="card-text">FROM:<?php echo $record['from']; ?>  TO:<?php echo $record['to']; ?></div>
+          <div class="card-text">PRICE:<?php echo $record['price']; ?></div>
+          <div class="card-text">For Further Details Contact:<?php echo $record['email']; ?></div> </div>
     </div>
+          <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
+        </div>
+     
 </div>
 </section>
 <?php }
