@@ -32,9 +32,10 @@ if(isset($_POST['insert-data']))
 
          
               if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-                $msg = "Image uploaded successfully";
-                echo "$msg";
-              }else{
+                header("Location: ../organise.php?uploadsuccess");
+                
+              }
+              else{
                 $msg = "Failed to upload image";
                 echo "$msg";
               }

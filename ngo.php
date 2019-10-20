@@ -127,11 +127,12 @@ $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($c
 while( $record = mysqli_fetch_array($resultset) ) {
 ?>
 <section>
-<div class="container pt-5 containers">
-<div class="row card-deck">
-    <div class="col-lg-4 col-md-4 col-12">
+<div class="container pt-5 pb-3">
+<div class="card" style="width: 18rem;">
+<!-- <div class="row card-deck">
+    <div class="col-lg-4 col-md-4 col-12"> -->
         <div class="card text-center " >
-        <img class="card-img-top" style="height:12rem" <?php echo "<img src='uploads/".$record['image']."' >"; ?>
+        <img class="card-img-top" style="height:12rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?> 
         
         <div class="card-body image">
           <h3 class="card-title"><?php echo $record['event']; ?></h3>
