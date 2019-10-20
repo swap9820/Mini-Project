@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect("localhost", "root", "","loginsystem");
+
 //$db = mysqli_select_db($conn,'loginsystem');
 
 // Initialize message variable
@@ -8,8 +8,8 @@ $msg = "";
 
 
 if(isset($_POST['insert-data']))
-{
-  
+{ $target = "uploads/".basename($_FILES['image']['name']);
+  $db = mysqli_connect("localhost", "root", "","loginsystem");
   //require 'dbh.inc.php';
   $name= mysqli_real_escape_string($db,$_POST['name']);
   $email=mysqli_real_escape_string($db, $_POST['email']);
@@ -24,18 +24,9 @@ if(isset($_POST['insert-data']))
 
   // Get image name
   $image = $_FILES['image']['name'];
-  // Get text
-  //$image_text = mysqli_real_escape_string($db, $_POST['image_text']);
-
-  // image file directory
-  $target = "uploads/".basename($image);
-
-  //$sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
-  // execute query
-  //mysqli_query($db, $sql);
+  
   $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
-  /*$stmt = mysqli_stmt_init($conn);
-  $query_run = mysqli_query($conn,$stmt);*/
+  
   
   mysqli_query($db, $sql);
 

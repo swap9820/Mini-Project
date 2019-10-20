@@ -82,7 +82,8 @@ session_start();
 
   <span class="border ">
    <form  class="container form-horizontal" action="includes/organiser.inc.php" enctype="multipart/form-data" method="post">
-     <div class="form-row">
+   <input type="hidden" name="size" value="1000000" >
+   <div class="form-row">
       <div class="form-group col-sm-6 ">
         <label class="control-label col-sm-4" for="name">Name:</label>
         <input type="text" class="form-control" name="name" placeholder="Enter name">
@@ -111,7 +112,6 @@ session_start();
             <option>Treks</option>
             <option>NGOs</option>
             <option>Competitions</option>
-            <option>Others</option>
           </select>
          </div>
   </div>
@@ -159,7 +159,7 @@ session_start();
         
        <div class="form-group"> 
          <div class="col-sm-offset-2 col-sm-10">
-         <button type="file" class="btn btn-dark border-dark" name="insert-data">Submit</button>
+         <button type="submit" class="btn btn-dark border-dark" name="insert-data">Submit</button>
          
          </div>
         </div>
