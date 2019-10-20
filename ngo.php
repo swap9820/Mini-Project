@@ -40,6 +40,14 @@
   font-size: 16px;
   padding: 16px 32px;
 }
+#display{
+  float:left;
+  margin: 20px 20px 20px 10px;
+}
+#foot{
+  width:100%;
+  float:right;
+}
 </style>
 </head>
 
@@ -127,12 +135,12 @@ $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($c
 while( $record = mysqli_fetch_array($resultset) ) {
 ?>
 <section>
-<div class="container pt-5 pb-3">
-<div class="card" style="width: 18rem;">
+<div class="container ">
+<div id="display"class="card" style="width: 18rem;">
 <!-- <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12"> -->
         <div class="card text-center " >
-        <img class="card-img-top" style="height:12rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?> 
+        <img class="card-img-top" style="height:12rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
         
         <div class="card-body image">
           <h3 class="card-title"><?php echo $record['event']; ?></h3>
@@ -147,11 +155,12 @@ while( $record = mysqli_fetch_array($resultset) ) {
     </div>
           <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
         </div>
-      
-</div>
-</section>
+      </div>
+      </section>
+
 <?php }
 ?>
-
+<div id="foot">
   <?php include 'footer.php' ?>
+</div>
    
