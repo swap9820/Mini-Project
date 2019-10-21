@@ -1,10 +1,25 @@
-
-
-<main>
+<?php
+session_start();
+include 'header.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Adamina&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
+    <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
+    </head>
 <header>
-  <!-- NAVBAR -->
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand"><img src="images/logo3.jpg" ></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -51,32 +66,26 @@
 
       
       
-        
-        
-        
-          <li class="dropleft">
-            <button class="bg-dark border-dark" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Mumbai</a>
-              <a class="dropdown-item" href="#">New Delhi</a>
-              <a class="dropdown-item" href="#">Chennai</a>
-              <a class="dropdown-item" href="#">Bangalore</a>
-              <a class="dropdown-item" href="#">Pune</a>
-              <a class="dropdown-item" href="#">Kolkata</a>
-              <a class="dropdown-item" href="#">Hyderabad</a>
-              <a class="dropdown-item" href="#">Ahmedabad</a>
-            </div>
-          </li>
-         
-      
-     </ul>
-   </div>
-  </div>
-  </nav>
-  </header>
-
+       
+<li class="dropleft">
+    <button class="bg-dark border-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="mumbai.php">Mumbai</a>
+              <a class="dropdown-item" href="delhi.php">New Delhi</a>
+              <a class="dropdown-item" href="chennai.php">Chennai</a>
+              <a class="dropdown-item" href="bangalore.php">Bangalore</a>
+              <a class="dropdown-item" href="pune.php">Pune</a>
+              <a class="dropdown-item" href="kolkata.php">Kolkata</a>
+              <a class="dropdown-item" href="hyderabad.php">Hyderabad</a>
+              <a class="dropdown-item" href="ahmedabad.php">Ahmedabad</a>
+    </div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
 
 
 <section>
@@ -148,22 +157,21 @@
             </div>
           </div>
         </div>
-       </div>
-    </div>
-    <div class="container pt-5 pb-3">
-        <div class="row card-deck ">
+      
+    
             <div class="col-lg-4 col-md-4 col-12">
-                <div class="card text-center image  " >
+                <div class="card text-center " >
                 <img class="card-img-top " src="images/cycle.jpg" alt="Card image cap" style="height:12rem;">
                 <div class="card-body ">
                   <h5 class="card-title">Sports</h5>
                   <p class="card-text">If you want to play some amazing sports and show your talent to others then this is the right platform.</p>
-                  </div>
-                  </div>
-                  <a href="sports.php" class="btn btn-primary stretched-link middle">Buy</a>
+                  
+                  <a href="sports.php" class="btn btn-primary stretched-link ">Explore</a>
                   </div>
            </div>
         </div>
+        </div>
+     </div>
         
         
   </section>

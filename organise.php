@@ -1,13 +1,25 @@
 <?php
 session_start();
-
+include 'header.php';
 ?>
-
-<main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Adamina&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
+    <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
+    </head>
 <header>
-  <!-- NAVBAR -->
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand"><img src="images/logo3.jpg" ></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -22,7 +34,7 @@ session_start();
          <a class="nav-link  " href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="event.php">Events</a>
+        <a class="nav-link " href="event.php">Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="organise.php">Organise</a>
@@ -54,31 +66,29 @@ session_start();
 
       
       
-        
-        
-        
-          <li class="dropleft">
-            <button class="bg-dark border-dark" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Mumbai</a>
-              <a class="dropdown-item" href="#">New Delhi</a>
-              <a class="dropdown-item" href="#">Chennai</a>
-              <a class="dropdown-item" href="#">Bangalore</a>
-              <a class="dropdown-item" href="#">Pune</a>
-              <a class="dropdown-item" href="#">Kolkata</a>
-              <a class="dropdown-item" href="#">Hyderabad</a>
-              <a class="dropdown-item" href="#">Ahmedabad</a>
-            </div>
-          </li>
-         
-      
-     </ul>
-   </div>
-  </div>
-  </nav>
-  </header>
+       
+<li class="dropleft">
+    <button class="bg-dark border-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="mumbai.php">Mumbai</a>
+              <a class="dropdown-item" href="delhi.php">New Delhi</a>
+              <a class="dropdown-item" href="chennai.php">Chennai</a>
+              <a class="dropdown-item" href="bangalore.php">Bangalore</a>
+              <a class="dropdown-item" href="pune.php">Pune</a>
+              <a class="dropdown-item" href="kolkata.php">Kolkata</a>
+              <a class="dropdown-item" href="hyderabad.php">Hyderabad</a>
+              <a class="dropdown-item" href="ahmedabad.php">Ahmedabad</a>
+    </div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+
+
+
 
   <span class="border ">
    <form  class="container form-horizontal" action="includes/organiser.inc.php" enctype="multipart/form-data" method="post">
@@ -125,7 +135,7 @@ session_start();
       </div>
 
    <div class="d-inline-flex"> 
-        <div class="form-group col-sm-10 ">
+        <div class="form-group col-sm-4 ">
           <label  for="date">Date :</label>
           <input type="date" class="form-control" id="date" name="date">
         </div>
@@ -137,15 +147,26 @@ session_start();
           <label for="duration">To :  </label>
           <input type="time" class="form-control" id="duration" name="to">
           </div>
+
+          <div class="form-group col-sm-4">
+          <label class="control-label col-sm-4" for="venue">Venue:</label>  
+          <select class="form-control" id="venue" name="venue">
+            <option value="" selected disabled>Please select city</option>
+            <option>Mumbai</option>
+            <option>New Delhi</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Pune</option>
+            <option>Kolkata</option>
+            <option>Hyderabad</option>
+            <option>Ahmedabad</option>
+          </select>
+         </div>
     </div>
 
 <span class="container form-horizontal">
 
 
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="venue">Venue:</label>
-          <input type="text" class="form-control" id="venue" placeholder="Enter Venue" name="venue">
-      </div>
 
       <div class="form-group">
           <label class="control-label col-sm-2" for="price">Ticket price:</label>

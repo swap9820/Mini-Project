@@ -48,7 +48,7 @@
 </script>
     
 </head>
-<!-- NAVBAR -->
+<!-- NAVBAR
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
@@ -125,8 +125,9 @@
    </div>
   </div>
   </nav>
-  </header>
+  </header> -->
   
+
     <!-- signup form -->
     <div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
           <div class="modal-dialog" role="document">

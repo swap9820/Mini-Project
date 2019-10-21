@@ -1,7 +1,3 @@
-<?php
-session_start();
-include 'header.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,55 +13,6 @@ include 'header.php';
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
     <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
-    <style>
-.containers {
-  position: relative;
-  width: 50%;
-}
-
-.image {
-  opacity: 1;
-  display: block;
-  
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.container:hover .image {
-  opacity: 0.3;
-}
-
-.container:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-#display{
-  float:left;
-  margin: 35px 35px 35px 35px;
-}
-#foot{
-  width:100%;
-  float:right;
-}
-</style>
     </head>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -80,10 +27,10 @@ include 'header.php';
    <div class="collapse navbar-collapse" id="navbarResponsive">
      <ul class="navbar-nav ml-auto">
       <li>
-         <a class="nav-link  " href="index.php">Home</a>
+         <a class="nav-link active " href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="event.php">Events</a>
+        <a class="nav-link" href="event.php">Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="organise.php">Organise</a>
@@ -135,43 +82,3 @@ include 'header.php';
 </div>
 </div>
 </nav>
-
-
-
-
-  <?php
-$conn= mysqli_connect("localhost","root","");
-$db = mysqli_select_db($conn,'loginsystem');
-$sql = "SELECT `name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise where category='Treks'";
-$resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
-while( $record = mysqli_fetch_array($resultset) ) {
-  ?>
-  <section>
-  <div class="container ">
-  <div id="display" class="card" style="width: 18rem;">
-  <!-- <div class="row card-deck">
-      <div class="col-lg-4 col-md-4 col-12"> -->
-          <div class="card text-center image " >
-          <img class="card-img-top" style="height:18rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
-          
-          <div class="card-body ">
-            <h3 class="card-title"><?php echo $record['event']; ?></h3>
-            
-            <!--<p class="card-text"><?php echo $record['desc']; ?></p><hr>-->
-            <div class="card-footer">DATE:<?php echo $record['date']; ?><hr>
-            VENUE:<?php echo $record['venue']; ?><hr>
-            FROM:<?php echo $record['from']; ?><br>
-            TO:<?php echo $record['to']; ?><hr>
-            PRICE: Rs.<?php echo $record['price']; ?><hr>
-            CONTACT:<br><?php echo $record['email']; ?></div></div>
-      </div>
-            <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
-          </div>
-        </div>
-        </section>
-  
-  <?php }
-  ?>
-  <div id="foot">
-    <?php include 'footer.php' ?>
-  </div>

@@ -136,42 +136,40 @@ include 'header.php';
 </div>
 </nav>
 
-
-
-
-  <?php
+<?php
 $conn= mysqli_connect("localhost","root","");
 $db = mysqli_select_db($conn,'loginsystem');
-$sql = "SELECT `name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise where category='Treks'";
+$sql = "SELECT * FROM organise where venue='New Delhi'";
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 while( $record = mysqli_fetch_array($resultset) ) {
-  ?>
-  <section>
-  <div class="container ">
-  <div id="display" class="card" style="width: 18rem;">
-  <!-- <div class="row card-deck">
-      <div class="col-lg-4 col-md-4 col-12"> -->
-          <div class="card text-center image " >
-          <img class="card-img-top" style="height:18rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
+?>
+<section>
+<div class="container ">
+<div id="display" class="card" style="width: 18rem;">
+<!-- <div class="row card-deck">
+    <div class="col-lg-4 col-md-4 col-12"> -->
+        <div class="card text-center image " >
+        <img class="card-img-top" style="height:18rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
+        
+        <div class="card-body ">
+          <h3 class="card-title"><?php echo $record['event']; ?></h3>
           
-          <div class="card-body ">
-            <h3 class="card-title"><?php echo $record['event']; ?></h3>
-            
-            <!--<p class="card-text"><?php echo $record['desc']; ?></p><hr>-->
-            <div class="card-footer">DATE:<?php echo $record['date']; ?><hr>
-            VENUE:<?php echo $record['venue']; ?><hr>
-            FROM:<?php echo $record['from']; ?><br>
-            TO:<?php echo $record['to']; ?><hr>
-            PRICE: Rs.<?php echo $record['price']; ?><hr>
-            CONTACT:<br><?php echo $record['email']; ?></div></div>
-      </div>
-            <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
-          </div>
+          <!--<p class="card-text"><?php echo $record['desc']; ?></p><hr>-->
+          <div class="card-footer">DATE:<?php echo $record['date']; ?><hr>
+          <!--VENUE:<?php echo $record['venue']; ?><hr>-->
+          FROM:<?php echo $record['from']; ?><br>
+          TO:<?php echo $record['to']; ?><hr>
+          PRICE: Rs.<?php echo $record['price']; ?><hr>
+          CONTACT:<br><?php echo $record['email']; ?></div></div>
+    </div>
+          <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
         </div>
-        </section>
-  
-  <?php }
-  ?>
-  <div id="foot">
-    <?php include 'footer.php' ?>
-  </div>
+      </div>
+      </section>
+      <?php }
+?>
+
+<div id="foot">
+  <?php include 'footer.php' ?>
+</div>
+   
