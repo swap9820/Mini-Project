@@ -97,8 +97,9 @@ include 'header.php';
             if (isset($_SESSION['userUId'])) 
             {
             echo '<div class="alert alert-success" role="alert">';
-            echo 'Welcome '.$_SESSION['userUId'];
+            echo '<i class="fas fa-smile-beam" style="padding-right:5px;"></i>Welcome '.$_SESSION['userUId'];
             echo'</div>';
+            
             }
 
             

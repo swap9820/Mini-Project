@@ -14,6 +14,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
     <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e33a211f69.js" crossorigin="anonymous"></script>
     <title>Document</title>
     <style>
        #error_msg{color:red; font-weight:bold;}
@@ -51,7 +52,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="images/logo3.jpg" ></a>
+    <li class="navbar-brand "><i class="fas fa-star-of-david" style="font-size:30px;color: white padding:45px"></i> Polaris</li>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span class="navbar-toggler-icon bg-dark "></span>
       <span class="icon-bar"></span>
@@ -61,13 +62,13 @@
    <div class="collapse navbar-collapse" id="navbarResponsive">
      <ul class="navbar-nav ml-auto">
       <li>
-         <a class="nav-link active " href="index.php">Home</a>
+         <a class="nav-link active " href="index.php"><i class="fas fa-home" style="padding:5px"></i>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="event.php">Events</a>
+        <a class="nav-link" href="event.php"><i class="fas fa-calendar-week" style="padding:5px"></i>Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="organise.php">Organise</a>
+        <a class="nav-link" href="organise.php"><i class="fas fa-marker" style="padding:4px"></i>Organise</a>
       </li>
      
       
@@ -78,18 +79,22 @@
            {
              
            echo '<li class="nav-item logout" data-toggle="modal" data-target="#exampleModalLong">
-            <a class="nav-link" href="includes/logout.inc.php" >Logout</a>
+            <a class="nav-link" href="includes/logout.inc.php" ><i class="fas fa-user-minus" style="padding:5px"></i>Logout</a>
            </li>';
+           echo'<li class="nav-item">
+           <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+           </li>';
+           echo '<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-clipboard"></i></a></li>';
            }
           else
            {
           echo'
          
           <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
-          <a class="nav-link"  >Sign Up</a>
+          <a class="nav-link"  ><i class="fas fa-user-plus" style="padding:4px" ></i>Sign Up</a>
         </li>
         <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong2">
-          <a class="nav-link" >Login</a>
+          <a class="nav-link" ><i class="fas fa-user-circle " style="padding:5px"></i>Login</a>
         </li>';
           }
           ?>
