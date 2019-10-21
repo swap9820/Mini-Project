@@ -151,12 +151,13 @@ while( $record = mysqli_fetch_array($resultset) ) {
           <div class="desc">FROM:<?php echo $record['from']; ?></div>
           <div class="desc">TO:<?php echo $record['to']; ?></div><hr>
           <div class="desc">PRICE:<?php echo $record['price']; ?></div><hr>
-          <div class="desc">For Further Details Contact:<?php echo $record['email']; ?></div></div>
+          <div class="desc">For Further Details Contact:<?php echo $record['email']; ?></div>
+        </div>
     </div>
           <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
-        </div>
-      </div>
-      </section>
+</div>
+</div>
+</section>
 
 <?php }
 ?>
