@@ -2,10 +2,23 @@
 session_start();
 include 'header.php';
 ?>
-<html>
-  <head>
-  <style>
-.container {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Adamina&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
+    <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
+    <style>
+.containers {
   position: relative;
   width: 50%;
 }
@@ -44,23 +57,15 @@ include 'header.php';
   font-size: 16px;
   padding: 16px 32px;
 }
+#display{
+  float:left;
+  margin: 35px 35px 35px 35px;
+}
+#foot{
+  width:100%;
+  float:right;
+}
 </style>
-</head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Adamina&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
-    <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
     </head>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
@@ -132,39 +137,40 @@ include 'header.php';
 </nav>
 
 
-  <?php
+<?php
 $conn= mysqli_connect("localhost","root","");
 $db = mysqli_select_db($conn,'loginsystem');
-$sql = "SELECT `name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image` FROM organise where category='Workshops'";
+$sql = "SELECT * FROM organise where venue='Chennai'";
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 while( $record = mysqli_fetch_array($resultset) ) {
-  ?>
-  <section>
-  <div class="container ">
-  <div id="display" class="card" style="width: 18rem;">
-  <!-- <div class="row card-deck">
-      <div class="col-lg-4 col-md-4 col-12"> -->
-          <div class="card text-center image " >
-          <img class="card-img-top" style="height:18rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
+?>
+<section>
+<div class="container ">
+<div id="display" class="card" style="width: 18rem;">
+<!-- <div class="row card-deck">
+    <div class="col-lg-4 col-md-4 col-12"> -->
+        <div class="card text-center image " >
+        <img class="card-img-top" style="height:18rem" <?php echo "<img src='includes/uploads/".$record['image']."' >"; ?>
+        
+        <div class="card-body ">
+          <h3 class="card-title"><?php echo $record['event']; ?></h3>
           
-          <div class="card-body ">
-            <h3 class="card-title"><?php echo $record['event']; ?></h3>
-            
-            <!--<p class="card-text"><?php echo $record['desc']; ?></p><hr>-->
-            <div class="card-footer">DATE:<?php echo $record['date']; ?><hr>
-            VENUE:<?php echo $record['venue']; ?><hr>
-            FROM:<?php echo $record['from']; ?><br>
-            TO:<?php echo $record['to']; ?><hr>
-            PRICE: Rs.<?php echo $record['price']; ?><hr>
-            CONTACT:<br><?php echo $record['email']; ?></div></div>
-      </div>
-            <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
-          </div>
+          <!--<p class="card-text"><?php echo $record['desc']; ?></p><hr>-->
+          <div class="card-footer">DATE:<?php echo $record['date']; ?><hr>
+          <!--VENUE:<?php echo $record['venue']; ?><hr>-->
+          FROM:<?php echo $record['from']; ?><br>
+          TO:<?php echo $record['to']; ?><hr>
+          PRICE: Rs.<?php echo $record['price']; ?><hr>
+          CONTACT:<br><?php echo $record['email']; ?></div></div>
+    </div>
+          <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
         </div>
-        </section>
-  
-  <?php }
-  ?>
-  <div id="foot">
-    <?php include 'footer.php' ?>
-  </div>
+      </div>
+      </section>
+      <?php }
+?>
+
+<div id="foot">
+  <?php include 'footer.php' ?>
+</div>
+   

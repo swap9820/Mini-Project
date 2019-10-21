@@ -27,21 +27,29 @@ if(isset($_POST['insert-data']))
   
   $sql = "INSERT INTO organise (`name`,`email`,`event`,`category`,`desc`,`date`,`from`,`to`,`venue`,`price`,`image`) VALUES ('$name','$email','$event','$category','$desc','$date','$from','$to','$venue','$price','$image')";
   
-  
-  mysqli_query($db, $sql);
-
-         
-              if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+  if(empty($name) || empty($email) || empty($event) || empty($category) || empty($date) || empty($from) || empty($to) || empty($venue) || empty($price))
+                {
+                    header("Location: ../organise.php?error=emptyfields&name=".$name."&email=".$event."&event=".$category."&category=".$date."&date=".$from."&from=".$from."&to=".$to."&venue=".$venue."&price=".$price."&image=".$image);
+                    exit();
+            
+                }
+          
+            
+              
+               else{ 
+                 if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+                  mysqli_query($db, $sql);
                 header("Location: ../organise.php?uploadsuccess");
-                
+              
               }
               else{
                 $msg = "Failed to upload image";
                 echo "$msg";
               }
-              
- 
-}
+                   
+               }
+         
+              }
 
 
  /* $target = $_FILES['image'];  
