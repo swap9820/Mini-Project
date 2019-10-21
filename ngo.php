@@ -170,9 +170,9 @@ while( $record = mysqli_fetch_array($resultset) ) {
           CONTACT:<br><?php echo $record['email']; ?></div></div>
     </div>
           <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
-        </div>
-      </div>
-      </section>
+</div>
+</div>
+</section>
 
 <?php }
 ?>
