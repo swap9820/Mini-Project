@@ -70,10 +70,10 @@ include 'header.php';
     <script src="https://use.fontawesome.com/0e6745b2a3.js"></script>
     <script src="https://kit.fontawesome.com/f0fe6fadbc.js" crossorigin="anonymous"></script>
     </head>
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand"><img src="images/logo3.jpg" ></a>
+    <li class="navbar-brand "><i class="fas fa-star-of-david" style="font-size:30px;color: white padding:45px"></i> Polaris</li>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
       <span class="navbar-toggler-icon bg-dark "></span>
       <span class="icon-bar"></span>
@@ -83,13 +83,13 @@ include 'header.php';
    <div class="collapse navbar-collapse" id="navbarResponsive">
      <ul class="navbar-nav ml-auto">
       <li>
-         <a class="nav-link  " href="index.php">Home</a>
+         <a class="nav-link  " href="index.php"><i class="fas fa-home" style="padding:5px"></i>Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="event.php">Events</a>
+        <a class="nav-link active" href="event.php"><i class="fas fa-calendar-week" style="padding:5px"></i>Events</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="organise.php">Organise</a>
+        <a class="nav-link" href="organise.php"><i class="fas fa-marker" style="padding:4px"></i>Organise</a>
       </li>
      
       
@@ -100,26 +100,35 @@ include 'header.php';
            {
              
            echo '<li class="nav-item logout" data-toggle="modal" data-target="#exampleModalLong">
-            <a class="nav-link" href="includes/logout.inc.php" >Logout</a>
+            <a class="nav-link" href="includes/logout.inc.php" ><i class="fas fa-user-minus" style="padding:5px"></i>Logout</a>
            </li>';
+           echo'<li class="nav-item">
+           <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+           </li>';
+           echo '<li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-clipboard"></i></a></li>';
            }
           else
            {
           echo'
          
           <li class="nav-item signup" data-toggle="modal" data-target="#exampleModalLong1">
-          <a class="nav-link"  >Sign Up</a>
+          <a class="nav-link"  ><i class="fas fa-user-plus" style="padding:4px" ></i>Sign Up</a>
         </li>
         <li class="nav-item login" data-toggle="modal" data-target="#exampleModalLong2">
-          <a class="nav-link" >Login</a>
+          <a class="nav-link" ><i class="fas fa-user-circle " style="padding:5px"></i>Login</a>
         </li>';
           }
           ?>
 
       
       
-       
-<li class="dropleft">
+     
+   
+  
+  
+      
+      
+    <li class="dropleft">
     <button class="bg-dark border-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <i class="fas fa-map-marker-alt" style="font-size: 24px;color: white"> </i>
     </button>
@@ -138,6 +147,7 @@ include 'header.php';
 </div>
 </div>
 </nav>
+</header>
 
 
 
@@ -169,7 +179,8 @@ while( $record = mysqli_fetch_array($resultset) ) {
           PRICE: Rs.<?php echo $record['price']; ?><hr>
           CONTACT:<br><?php echo $record['email']; ?></div></div>
     </div>
-          <a href="workshop.php" class="btn btn-primary stretched-link middle">BUY TICKETS</a>
+    
+       <a href="payment.php" id="btn" name="<?php echo $record['id'];?>" type="submit"  class="btn btn-primary stretched-link middle">BUY TICKETS</a>
 </div>
 </div>
 </section>
@@ -179,4 +190,26 @@ while( $record = mysqli_fetch_array($resultset) ) {
 <div id="foot">
   <?php include 'footer.php' ?>
 </div>
+<script text="text/javascript">
+$('input[type=submit]').click(function(e){
+  var id=e.target.name;
+  
+  $.ajax({
+    		type:'POST',
+    		url:'payment.php',
+
+    		data: {name:id},
+
+    		success:function(response){
+          window.open("payment.php");
+    			//alert("Marked as Approved");
+    			//location.reload();
+    		}
+    	});
+    	//window.open("status.php");
+		
+	});
+    
+    });
+</script>
    
