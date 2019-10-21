@@ -42,7 +42,7 @@
 }
 #display{
   float:left;
-  margin: 20px 20px 20px 10px;
+  margin: 35px 35px 35px 35px;
 }
 #foot{
   width:100%;
@@ -136,7 +136,7 @@ while( $record = mysqli_fetch_array($resultset) ) {
 ?>
 <section>
 <div class="container ">
-<div id="display"class="card" style="width: 18rem;">
+<div id="display" class="card" style="width: 18rem;">
 <!-- <div class="row card-deck">
     <div class="col-lg-4 col-md-4 col-12"> -->
         <div class="card text-center " >
