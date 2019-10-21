@@ -5,14 +5,15 @@ include 'header.php';
 //$db = mysqli_select_db($conn,'loginsystem');
 
 //Initialize message variable
-$conn= mysqli_connect("localhost","root","");
+ $conn= mysqli_connect("localhost","root","");
   $db = mysqli_select_db($conn,'loginsystem');
-if (isset($_SESSION['userUId'])) 
-{
+//if (isset($_SESSION['userUId'])) 
+//{
     echo"1";
     $Id=$_POST['name'];
-    if(isset($_POST['$id']))
-    {
+    echo $Id;
+    
+    
 
         
         echo"Buy Button selected successfully";
@@ -34,11 +35,11 @@ if (isset($_SESSION['userUId']))
 
         //$result=mysqli_query($details);
 
-     }
-}
-else {
-    echo "You need to login first";
-}
+     
+//}
+//else {
+ //   echo "You need to login first";
+//}
 
 
 /**if(isset($_POST['buy']))
