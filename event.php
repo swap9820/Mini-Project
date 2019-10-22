@@ -186,7 +186,7 @@ include 'header.php';
         
         
   </section>
-  
+  <br><br><br>
   <?php include 'footer.php' ?>
 </main>
 </body>
